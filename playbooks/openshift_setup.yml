@@ -82,6 +82,9 @@
       openshift_node_kubelet_args:
         max-pods:
         - "100"
+      openshift_node_sdn_mtu: 1450
+      cli_docker_additional_registries: "registry-mirror.aws.paas.ninja:5000,registry.access.redhat.com"
+      cli_docker_insecure_registries: "registry-mirror.aws.paas.ninja:5000"
     with_items: node_hosts
 
 # Configure the instances

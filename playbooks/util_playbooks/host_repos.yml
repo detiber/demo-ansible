@@ -22,20 +22,23 @@
 
 - name: Repository configuration
   hosts: oo_hosts_to_register
+  roles:
+  - ../../../../aos-ansible/playbooks/roles/ops_mirror_bootstrap
+#  - ../../../../aos-ansible/playbooks/roles/qe_registry_bootstrap
   tasks:
-  - name: Configure OSE repository
-    copy:
-      src: ../files/ose3.repo
-      dest: /etc/yum.repos.d/ose3.repo
-      mode: 0644
-      owner: root
-      group: root
-    when: skip_subscription_management | bool
+#  - name: Configure OSE repository
+#    copy:
+#      src: ../files/ose3.repo
+#      dest: /etc/yum.repos.d/ose3.repo
+#      mode: 0644
+#      owner: root
+#      group: root
+#    when: skip_subscription_management | bool
 
-  - name: Enable rhui extras channel
-    command: yum-config-manager --enable rhui-REGION-rhel-server-extras
-    when: skip_subscription_management | bool
-
+#  - name: Enable rhui extras channel
+#    command: yum-config-manager --enable rhui-REGION-rhel-server-extras
+#    when: skip_subscription_management | bool
+#
   - name: Update current package set
     yum:
       name: '*'
