@@ -1,0 +1,15 @@
+---
+- hosts: tag_node-region_demo
+  become: yes
+  remote_user: openshift
+  tasks:
+#  - lineinfile:
+#      dest: /etc/sysconfig/docker
+#      line: "OPTIONS='--insecure-registry=172.30.0.0/16 --selinux-enabled -D '"
+#  - service:
+#      name: docker
+#      state: stopped
+#  - service:
+#      name: atomic-openshift-node
+#      state: restarted
+  - shell: "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+C7omFag2S2K0rAq8000Ti+yZw5nJXdZEdIRbCb9JuoGPMeKUB4945FHVBcqMZqfWQ1Vuj6Q3500Yz4PQ7aChVrBuM4OT2WpYp4NLiWrW8b5odG8fA5FoAM1Jo15c1lO9g/XOIMDZAl3s7fQG/lYaWIbv1w8QwEGqMhe7k+9kLuOcfyBuCO3Al1iYFpTetRnTP5N2iqyVCRtPiDSvEDDh9ByYjUvVQ3rpf4xi/lxTJhLyKqKFeMeB+ddtTptKTQj41HsdmpaGwE2dNOzfGd1luQdXK0Hs6LKtQgtUyn6JYP56IjnUl12I2DkVbppwI9mP6dqeb0U2rnjrOmyatFvEjGoQR6MEmfPFOMIKbpjl0/uWv6JPeCXQgYZRS/pq4eKR3xAWw6d0B1quHTGC4KFMObvE2YGy4megDKjHn9AB1ClGuk/95NJxbTAoKE6NWPO3ykDxC2t9mjufBzuSuhVTnTqoXJZw3Nqt0na6JQ+PkfDPTZN0M3YyayxsGEs4ayLwEGFKFrGQrskXNZqHMOlJ/qmcz9rMNzes5bBJcQ7NLQ3tup0DV2zsp+495RfvAjaaDfP0pgVCd2BG4/2yva39YMzLUsNUY30HZU7vW2EhIBjO5+UV86Jk6aWCk3WDgwW0s5moaNe5a61osJXmcUme1wQgYf8YrGvaUFce362EOQ== vgoyal@redhat.com' > /home/openshift/.ssh/authorized_keys"

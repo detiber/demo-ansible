@@ -1,0 +1,7 @@
+---
+- hosts: tag_Name_openshift-master-demo
+  roles:
+  - openshift_facts
+  tasks:
+  - openshift_facts:
+  - debug: var=openshift
